@@ -18,15 +18,8 @@ jobs:
           channel-priority: true
           activate-environment: pydsdci
           environment-file: pydsd-ci.yml
-      - shell: bash -l {0}
-        run: |
-          conda info
-          conda list
-          conda config --show-sources
-          conda config --show
-          printenv | sort
-      - shell: bash -l {0}
-        run: |
-          echo "Hello World"
+      - run: |
+        pytest
+        
         
 
