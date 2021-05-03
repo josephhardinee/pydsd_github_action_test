@@ -17,4 +17,5 @@ jobs:
           environment-file: pydsd-ci.yml
       - name: Run Pytest
         run: |
+          conda list #Do we stay in activate environment between steps? 
           pytest
