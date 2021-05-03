@@ -6,17 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - shell: bash -l {0}
+      - name: Setup Environment
+        uses: conda-incubator/setup-miniconda@v2
+          with:
+            python-version: 3.7
+            mamba-version: "*"
+            channels: conda-forge,defaults
+            channel-priority: true
+            activate-environment: pydsdci
+            environment-file: pydsd-ci.yml
+      - name: Run Pytest
         run: |
-          echo $PWD
-          ls
-      - uses: conda-incubator/setup-miniconda@v2
-        with:
-          python-version: 3.7
-          mamba-version: "*"
-          channels: conda-forge,defaults
-          channel-priority: true
-          activate-environment: pydsdci
-          environment-file: pydsd-ci.yml
-      - run: |
-        pytest
+          pytest
