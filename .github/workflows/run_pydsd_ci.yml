@@ -20,6 +20,3 @@ jobs:
           environment-file: pydsd-ci.yml
       - run: |
         pytest
-        
-        
-
