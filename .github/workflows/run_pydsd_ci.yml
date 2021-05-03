@@ -13,7 +13,7 @@ jobs:
           channels: conda-forge,defaults
           channel-priority: true
           activate-environment: pydsdci
-          environment-file: pydsd-ci.yml
+          environment-file: ../../pydsd-ci.yml
       - shell: bash -l {0}
         run: |
           conda info
@@ -21,5 +21,8 @@ jobs:
           conda config --show-sources
           conda config --show
           printenv | sort
+      - shell: bash -l {0}
+        run: |
+          echo "Hello World"
         
 
