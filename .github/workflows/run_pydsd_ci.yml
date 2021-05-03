@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - shell: bash -l {0}
+        run: |
+        echo $PWD
+        ls
       - uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: 3.7
