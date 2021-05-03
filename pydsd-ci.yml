@@ -16,6 +16,7 @@ dependencies:
   - sphinx
   - numpydoc
   - hdf4
-  - twine
   - pip:
     - sphinx-gallery
+    - twine
+    - wheel
