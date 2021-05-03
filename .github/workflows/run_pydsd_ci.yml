@@ -17,5 +17,5 @@ jobs:
           environment-file: pydsd-ci.yml
       - name: Run Pytest
         shell: bash -l {0}
-          run: |
-            pytest
+        run: |
+          pytest
