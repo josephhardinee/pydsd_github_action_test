@@ -16,6 +16,6 @@ jobs:
           activate-environment: pydsdci
           environment-file: pydsd-ci.yml
       - name: Run Pytest
-        run: |
-          conda activate pydsdci
-          pytest
+        shell: bash -l {0}
+          run: |
+            pytest
