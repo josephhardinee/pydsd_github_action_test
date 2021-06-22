@@ -26,6 +26,6 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         shell: bash -l {0}
         run: |
-	  python setup.py sdist bdist_wheel
+          python setup.py sdist bdist_wheel
 	  env
 	  twine upload --repository testpypi dist/*
