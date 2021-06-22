@@ -19,6 +19,9 @@ jobs:
         shell: bash -l {0}
         run: |
           pytest
+      - name: Build package
+        run: >-
+          python -m build --sdist --wheel --outdir dist/ .
       - name: Publish package to PYPI
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
