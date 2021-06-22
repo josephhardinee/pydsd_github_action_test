@@ -33,7 +33,7 @@ jobs:
       - name: Build Documentation
         shell: bash -l {0}
         run: |
-          pip install -e pydsd
+          pip install -e .
           cd docs
           make clean
           make html
